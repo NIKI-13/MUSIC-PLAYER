@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: url("bg1.jpg"); 
+  background-size: cover;
+  /* background: rgb(53, 59, 53); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Kalnia Glaze, sans-serif;
+  font-size: 12px;
+}
+
+.player-container{
+  height: 500px;
+  width: 400px;
+  background-image: linear-gradient(to bottom right, red, orange, indigo, red, indigo, purple, darkblue);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.9);
+}
+
+.img-container {
+  height: 300px;
+  width: 300px;
+  position: relative;
+  top: -50px;
+  left: 50px;
+}
+
+.img-container img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+  font-size: 25px;
+  text-align: center;
+  margin: 0;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 400;
+  margin: 5px 0 0;
+}
+
+/* PROGRESS */
+.progress-container {
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 40px 20px;
+  height: 4px;
+  width: 90%;
+}
+
+.progress {
+  background: #242323;
+  border-radius: 5px;
+  height: 100%;
+  /* change this to show progress */
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.duration-wrapper {
+  position: relative;
+  top: -25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* CONTROLS */
+.player-controls {
+  position: relative;
+  top: -15px;
+  left: 120px;
+  width: 200px;
+}
+
+.fa-solid {
+  font-size: 30px;
+  color: rgb(44, 15, 56);
+  margin-right: 30px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fa-solid:hover{
+  filter: brightness(30%);
+}
+
+.main-button {
+  font-size: 40px;
+  position: relative;
+  top: 3px;
+}
+
+/* Media Query: iPhone (Vertical) */
+@media screen and (max-width: 376px) {
+
+  .player-container{
+    width: 95vw;
+  }
+
+
+  .img-container {
+    left: 29px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+  .player-controls {
+    top: -10px;
+    left: 100px;
+  }
+}
+
+/* Volume Container */
+.volume-container {
+  position: relative;
+  display: inline-block;
+  margin-left: -260px; /* Adjust spacing as needed */
+}
+
+/* Volume Icon */
+#volume-btn {
+  font-size: 25px;
+  color: rgb(44, 15, 56);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Volume Slider Container */
+.volume-slider-container {
+  display: none;  /* Hidden by default */
+  position: absolute;
+  top: -80px;  /* Position it above the player */
+  left: 30%;
+  transform: translateX(-50%);
+  width: 30px;  /* Adjust width of container to fit slider */
+  height: 70px;  /* Adjust height of container */
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  z-index: 1000;  /* Ensure it's above other elements */
+  opacity: 0;  /* Start hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+/* Show volume slider container when active */
+.volume-container.active .volume-slider-container {
+  display: flex;
+  opacity: 1; /* Fade in */
+}
+  
+/* Volume Slider */
+.volume-slider {
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  transform: rotate(-90deg); /* Rotate slider to vertical orientation */
+  transform-origin: center center;
+  background: transparent;
+}
+
+
+
+
+
+
+
